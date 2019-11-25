@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollower : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject Player;
+    private float horizontalInput;
+    private float verticalInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,9 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position + new Vector3(0, 1/2, -2);
+        horizontalInput = Input.GetAxis("Mouse X");
+        verticalInput = Input.GetAxis("Mouse Y");
+
+
     }
 }
