@@ -23,6 +23,7 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream:Society Simulator/Assets/Scripts/PlayerControls.cs
         horizontaInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
         //We will move the player forward
@@ -31,6 +32,15 @@ public class PlayerControls : MonoBehaviour
         transform.Rotate(Vector3.up * Time.deltaTime * Speed * horizontaInput * turnSpeed);
 
         if (Input.GetKey(KeyCode.Space) && isOnGround)
+=======
+   
+        horizontalInput = Input.GetAxis("Horizontal");
+        forwardInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+>>>>>>> Stashed changes:Society Simulator/Assets/Scripts/PlayerController.cs
         {
             playerRb.AddForce(Vector3.up * jumpForce);
             isOnGround = false;
