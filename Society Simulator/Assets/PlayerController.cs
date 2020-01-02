@@ -5,12 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float Speed = 10f;
-    public float horizontalInput;
     public float forwardInput;
+    public float horizontalInput;
     public float turnSpeed = 10f;
     private float gravityModifier = 1.5f;
     public float jumpForce;
     public bool isOnGround;
+        Physics.gravity *= gravityModifier;
+
+    }
     private Rigidbody playerRb;
 
 
@@ -18,10 +21,6 @@ public class PlayerController : MonoBehaviour
     void start()
     {
         playerRb = GetComponent<Rigidbody>();
-        Physics.gravity *= gravityModifier;
-
-    }
-
 
     // Update is called once per frame
     void Update()
